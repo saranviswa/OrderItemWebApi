@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "d4LbzjSPxv/vRDPn60RL6IKxpvcHpF8K1pw0payZXkN730fnYUbB6wRNb11HcUQyHst2BmcsmqiRfFNuRAnX6g==",
+  "success": true,
+  "projectFilePath": "D:\\Cognizant_internship\\EnhancementProject\\CloudPracticeCheck\\OrderItem\\OrderItem\\OrderItem.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bsara\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512"
+  ],
+  "logs": []
+}
