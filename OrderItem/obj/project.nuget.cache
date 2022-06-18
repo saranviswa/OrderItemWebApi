@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "d4LbzjSPxv/vRDPn60RL6IKxpvcHpF8K1pw0payZXkN730fnYUbB6wRNb11HcUQyHst2BmcsmqiRfFNuRAnX6g==",
+  "dgSpecHash": "06khachN4CnP0Jvrb3xHeXP16SKQIR6qw7fSq9F/rcuy4TVm2vNSLJ7GL2s4wWPm4H6Er6TKdN/W4p0FD9OHCw==",
   "success": true,
   "projectFilePath": "D:\\Cognizant_internship\\EnhancementProject\\CloudPracticeCheck\\OrderItem\\OrderItem\\OrderItem.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\bsara\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512"
+    "C:\\Users\\bsara\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512",
+    "C:\\Users\\bsara\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

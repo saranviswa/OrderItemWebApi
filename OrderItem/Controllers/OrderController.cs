@@ -1,5 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using OrderItem.Models;
+using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -9,36 +14,40 @@ namespace OrderItem.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        // GET: api/<OrderController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        List<Cart> orderItem = new List<Cart>();
+        int idValue = 0;
 
-        // GET api/<OrderController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+
+
+
 
         // POST api/<OrderController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult<Cart>> Post([FromBody] ModelId model)
         {
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new System.Uri("http://20.88.173.18/api/");
+                var urlAppend = "menuitem/" + Convert.ToString(model.Id);
+                var response = await client.GetAsync(urlAppend);
+                if (response.IsSuccessStatusCode)
+                {
+                    var apiResponse = await response.Content.ReadAsStringAsync();
+                    MenuItem res = JsonConvert.DeserializeObject<MenuItem>(apiResponse);
+
+
+                    Cart cart = new Cart();
+                    cart.Id = idValue + 1;
+                    cart.UserId = cart.Id;
+                    cart.MenuItemId = model.Id;
+                    cart.MenuItemName = res.Name;
+                    return Ok(cart);
+                }
+            }
+            return BadRequest("Test");
         }
 
-        // PUT api/<OrderController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
 
-        // DELETE api/<OrderController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
